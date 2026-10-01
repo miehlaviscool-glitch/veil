@@ -1,0 +1,9 @@
+node_modules/
+.env
+data/
+logs/
+dist/
+*.log
+.DS_Store
+.shots/
+pkg.png

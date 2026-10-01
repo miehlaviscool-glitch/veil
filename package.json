@@ -1,0 +1,95 @@
+{
+  "name": "veil",
+  "version": "1.0.0",
+  "description": "Veil: the control center for your Discord bot. A desktop app and self-hosted toolkit with a live dashboard, slash-command admin, schedules, broadcasts, blacklists and more.",
+  "main": "electron/main.js",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "app": "electron .",
+    "start": "node src/supervisor.js",
+    "bot": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "deploy": "node scripts/deploy-commands.js",
+    "icons": "node scripts/make-icon.js",
+    "test": "node --test \"test/*.test.js\"",
+    "dist": "electron-builder --win --publish never",
+    "dist:dir": "electron-builder --win --dir --publish never",
+    "screenshots": "electron scripts/screenshots.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.22.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3"
+  },
+  "productName": "Veil",
+  "author": "miehlaviscool-glitch",
+  "build": {
+    "appId": "com.veil.app",
+    "productName": "Veil",
+    "copyright": "MIT",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**",
+      "src/**",
+      "build/icon.png",
+      "build/tray.png",
+      "package.json",
+      "!**/*.map",
+      "build/icon.ico"
+    ],
+    "asar": true,
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Veil",
+      "artifactName": "Veil-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "Veil-${version}-portable.${ext}"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miehlaviscool-glitch/veil.git"
+  },
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "bot-manager",
+    "dashboard",
+    "electron",
+    "discord.js"
+  ]
+}

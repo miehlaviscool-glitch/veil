@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://cdn.discordapp.com data:; style-src 'self'; script-src 'self'">
+  <title>Veil Setup</title>
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="../../build/icon.png" alt="">
+    <h1 id="heading">Welcome to Veil</h1>
+    <p class="muted" id="sub">Connect your Discord bot in under a minute. Your token is encrypted with your operating system's secure storage and is only ever sent to Discord to log your bot in.</p>
+
+    <section class="card">
+      <h2><span class="num">1</span>Connect your bot</h2>
+      <label for="token">Bot token <small id="tokenHint"></small></label>
+      <div class="row">
+        <input id="token" type="password" placeholder="Paste your bot token" autocomplete="off" spellcheck="false">
+        <button id="verify">Verify</button>
+      </div>
+      <div id="tokenMsg" class="msg"></div>
+      <div id="botcard" class="botcard hidden"><img id="botAvatar" alt=""><div><b id="botName"></b><div class="muted" id="botOwner"></div></div></div>
+      <details>
+        <summary>Where do I find my token?</summary>
+        <ol>
+          <li>Open the <b>Discord Developer Portal</b> and pick (or create) your application.</li>
+          <li>Go to the <b>Bot</b> tab, then press <b>Reset Token</b> and copy it.</li>
+          <li>Paste it above. You do <b>not</b> need to enable any privileged intents.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2><span class="num">2</span>Access &amp; alerts <small class="muted">(all optional)</small></h2>
+      <p class="muted">The Discord application owner and developer team members automatically get full owner access.</p>
+      <label for="owners">Extra owner IDs <small>comma separated</small></label>
+      <input id="owners" type="text" placeholder="123456789012345678, 987654321098765432">
+      <label for="dev">Test server ID <small>slash commands appear there instantly instead of within an hour</small></label>
+      <input id="dev" type="text" placeholder="Leave empty for global commands">
+      <label for="hook">Discord webhook URL <small>get join/leave/error alerts in a channel</small></label>
+      <input id="hook" type="url" placeholder="https://discord.com/api/webhooks/...">
+    </section>
+
+    <section class="card">
+      <h2><span class="num">3</span>Preferences</h2>
+      <label class="switch"><input id="autoStartBot" type="checkbox"><span><b>Start the bot when the app opens</b><span class="muted">Recommended</span></span></label>
+      <label class="switch"><input id="minimizeToTray" type="checkbox"><span><b>Keep running in the system tray</b><span class="muted">Closing the window won't stop your bot</span></span></label>
+      <label class="switch"><input id="notifications" type="checkbox"><span><b>Desktop notifications</b><span class="muted">Server joins/leaves and errors</span></span></label>
+      <label class="switch"><input id="launchAtLogin" type="checkbox"><span><b>Launch when I sign in to Windows</b><span class="muted">Keeps your bot online after reboots</span></span></label>
+      <label class="switch"><input id="autoDeploy" type="checkbox"><span><b>Register slash commands automatically</b><span class="muted">Only when they change</span></span></label>
+    </section>
+    <div id="saveMsg" class="msg"></div>
+  </div>
+  <div class="footer">
+    <button id="cancel" class="hidden">Cancel</button>
+    <button id="save" class="primary">Save &amp; start bot</button>
+  </div>
+  <script src="setup.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Veil</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="login" class="login hidden">
+    <form id="loginForm" class="card">
+      <h1>Veil</h1>
+      <p class="muted">Enter your dashboard access token.</p>
+      <input id="tokenInput" type="password" placeholder="Access token" autocomplete="current-password" required>
+      <button class="primary" type="submit">Sign in</button>
+      <p id="loginError" class="error"></p>
+    </form>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside>
+      <div class="brand"><div class="logo" id="logo"></div><span id="brand">Veil</span></div>
+      <nav id="nav"></nav>
+      <div class="side-foot">
+        <button id="paletteBtn" class="ghost">Quick actions <kbd>Ctrl K</kbd></button>
+        <button id="logout" class="ghost">Sign out</button>
+      </div>
+    </aside>
+    <main>
+      <div class="topbar">
+        <h2 id="title"></h2>
+        <span id="statusPill" class="pill"></span>
+        <span class="spacer"></span>
+        <span id="desktopCtl"></span>
+      </div>
+      <section id="view"></section>
+    </main>
+  </div>
+  <div id="layer"></div>
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

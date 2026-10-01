@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'">
+  <title>Veil</title>
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+  <div class="drag"></div>
+  <div class="center">
+    <div>
+      <img class="logo" src="../../build/icon.png" alt="">
+      <h1><span id="dot" class="status-dot"></span><span id="title">Starting…</span></h1>
+      <p class="muted" id="detail"></p>
+      <div class="row" style="justify-content:center;margin-top:18px">
+        <button id="start" class="primary hidden">Start bot</button>
+        <button id="restart" class="hidden">Retry</button>
+        <button id="settings">Settings</button>
+        <button id="logs">Open logs folder</button>
+      </div>
+    </div>
+  </div>
+  <script src="offline.js"></script>
+</body>
+</html>
