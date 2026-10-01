@@ -42,6 +42,10 @@
 
 ### Desktop app (recommended)
 
+> **Just want the app?** Download the latest `Veil-Setup-*.exe` (installer) or `Veil-*-portable.exe` from the [**Releases page**](https://github.com/miehlaviscool-glitch/veil/releases/latest), run it, and skip to the setup wizard below. No build needed.
+
+Or build it yourself:
+
 ```bash
 git clone https://github.com/miehlaviscool-glitch/veil.git
 cd veil
